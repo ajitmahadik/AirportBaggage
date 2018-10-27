@@ -13,7 +13,7 @@ public class Departure {
 	private String destination;
 	private Date flightTime;
 
-	List<Bag> bags = new ArrayList<Bag>();
+	private List<Bag> bags = new ArrayList<>();
 
 	public Departure(String flightId, String flightGate, String destination, String date) {
 		this.flightId = flightId;
@@ -30,7 +30,7 @@ public class Departure {
 			cal.setTime(parse);
 			today.set(Calendar.HOUR_OF_DAY, cal.get(Calendar.HOUR_OF_DAY));
 			today.set(Calendar.MINUTE, cal.get(Calendar.MINUTE));
-			today.set(Calendar.SECOND, 00);
+			today.set(Calendar.SECOND, 0);
 
 			this.flightTime = today.getTime();
 		} catch (ParseException e) {

@@ -6,7 +6,7 @@ import java.util.List;
 public class Node implements Comparable<Node> {
 
 	private String name;
-	private List<Path> destinations = new ArrayList<Path>();
+	private List<Path> destinations = new ArrayList<>();
 	private double minimumDistance = Double.POSITIVE_INFINITY;
 	private Node prev;
 
@@ -71,14 +71,9 @@ public class Node implements Comparable<Node> {
 		}
 		Node other = (Node) obj;
 		if (name == null) {
-			if (other.name != null) {
-				return false;
-			}
-		} else if (!name.equals(other.name)) {
-			return false;
-		}
-		return true;
-	}
+            return other.name == null;
+		} else return name.equals(other.name);
+    }
 
 	@Override
 	public String toString() {

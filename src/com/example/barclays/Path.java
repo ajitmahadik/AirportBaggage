@@ -47,14 +47,9 @@ public class Path {
 		}
 		Path other = (Path) obj;
 		if (targetNode == null) {
-			if (other.targetNode != null) {
-				return false;
-			}
-		} else if (!targetNode.equals(other.targetNode)) {
-			return false;
-		}
-		return true;
-	}
+            return other.targetNode == null;
+		} else return targetNode.equals(other.targetNode);
+    }
 
 	@Override
 	public String toString() {

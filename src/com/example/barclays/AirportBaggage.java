@@ -18,8 +18,8 @@ public class AirportBaggage {
 	 */
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		ConveyorSystem conveyorSystem = new ConveyorSystem();
-		Map<String, Departure> departures = new HashMap<String, Departure>();
-		List<Bag> bags = new ArrayList<Bag>();
+		Map<String, Departure> departures = new HashMap<>();
+		List<Bag> bags = new ArrayList<>();
 
 		// BufferedReader br = new BufferedReader(new FileReader(new File("C:/",
 		// "input.txt")));
@@ -55,7 +55,7 @@ public class AirportBaggage {
 				bags.add(bag);
 			}
 
-			if (line.contains(new String("ARRIVAL"))) {
+			if (line.contains("ARRIVAL")) {
 				break;
 			}
 		}
@@ -63,7 +63,7 @@ public class AirportBaggage {
 		br.close();
 
 		for (Bag bag : bags) {
-			String end = null;
+			String end;
 
 			if (bag.getFlightId().equalsIgnoreCase("ARRIVAL")) {
 				end = "BaggageClaim";
